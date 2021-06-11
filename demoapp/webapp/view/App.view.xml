@@ -1,0 +1,22 @@
+<mvc:View
+    controllerName="demoapp.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                    <List items="{empdata>/Employees}">
+                    <items >
+                    <ObjectListItem type="Navigation" press=".onListPress" title="{empdata>name}" intro="{empdata>salary}"></ObjectListItem>
+                    </items>
+                    </List>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,18 @@
+<mvc:View
+    controllerName="demoapp.controller.DetailPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Shell >
+		<App >
+			<pages>
+				<Page id="idpage" title="Detail Page" showNavButton="true" navButtonPress=".onNavPress">
+					<content>
+                    <ObjectHeader intro="{empdata>name}" title="{empdata>salary}"/>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
