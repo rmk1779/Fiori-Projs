@@ -9,9 +9,36 @@
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
-                    <List items="{empdata>/Employees}">
+                    <List id="idList" items="{
+         path : 'empdata>/Employees',
+         sorter : {
+            path : 'name' 
+         }
+      }">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Employees"/>
+                            <ToolbarSpacer/>
+                            <SearchField width="50%" search=".onFilterEmployees" liveChange=".onLiveChange"/>
+                        </Toolbar>
+                    </headerToolbar>
                     <items >
-                    <ObjectListItem type="Navigation" press=".onListPress" title="{empdata>name}" intro="{empdata>salary}"></ObjectListItem>
+                    <ObjectListItem type="Navigation" press=".onListPress" title="{empdata>name}" intro="{empdata>email}"
+                    number="{
+			parts: [{path: 'empdata>salary'}, {path: 'empdata>currency'}],
+			type: 'sap.ui.model.type.Currency',
+			formatOptions: {
+				showMeasure: false
+			}
+		}" numberUnit="{empdata>currency}"
+        numberState="{= ${empdata>salary} > 25000 ? 'Success' : 'Error' }">
+        <firstStatus>
+					<ObjectStatus text="{
+						path: 'empdata>salary',
+						formatter: '.formatter.salaryStatus'
+					}"/>
+				</firstStatus>
+        </ObjectListItem>
                     </items>
                     </List>
                     </content>
