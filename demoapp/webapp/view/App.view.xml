@@ -10,11 +10,12 @@
 				<Page id="page" title="{i18n>title}">
 					<content>
                     <List id="idList" items="{
-         path : 'empdata>/Employees',
-         sorter : {
-            path : 'name' 
-         }
-      }">
+                        path : 'empdata>/Employees',
+                        factory: '.employeeListFactory',
+                        sorter : {
+                            path : 'name' 
+                        }
+                    }">
                     <headerToolbar>
                         <Toolbar>
                             <Title text="Employees"/>
@@ -22,8 +23,8 @@
                             <SearchField width="50%" search=".onFilterEmployees" liveChange=".onLiveChange"/>
                         </Toolbar>
                     </headerToolbar>
-                    <items >
-                    <ObjectListItem type="Navigation" press=".onListPress" title="{empdata>name}" intro="{empdata>email}"
+                    <dependents>
+                    <ObjectListItem id="idObjectList" type="Navigation" press=".onListPress" title="{empdata>name}" intro="{empdata>email}"
                     number="{
 			parts: [{path: 'empdata>salary'}, {path: 'empdata>currency'}],
 			type: 'sap.ui.model.type.Currency',
@@ -39,7 +40,8 @@
 					}"/>
 				</firstStatus>
         </ObjectListItem>
-                    </items>
+        <StandardListItem id="idStandardList" icon="sap-icon://employee" title="{empdata>name}" info="{empdata>salary}"></StandardListItem>
+                    </dependents>
                     </List>
                     </content>
 				</Page>

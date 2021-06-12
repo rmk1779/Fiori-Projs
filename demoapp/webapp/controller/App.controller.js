@@ -51,6 +51,19 @@ sap.ui.define([
 			var oList = this.byId("idList");
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(aFilter);
+        },
+        employeeListFactory: function(sId, oContext){
+            let oUIControl;
+
+            if(oContext.getProperty("name") === "Bob"){
+
+               oUIControl = this.byId("idStandardList").clone(sId);
+            }else{
+                oUIControl = this.byId("idObjectList").clone(sId);
+            }
+
+            return oUIControl;
+
         }
 		});
 	});
