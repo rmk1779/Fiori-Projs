@@ -64,6 +64,10 @@ sap.ui.define([
 
             return oUIControl;
 
+        },
+        onBtnPress: function(oEvent){
+            sap.m.MessageToast.show("clicked man!!!!");
+            oEvent.getSource().setText("Ohh Clicked");
         }
 		});
 	});

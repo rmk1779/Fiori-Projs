@@ -8,6 +8,7 @@
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
+                    <Button id="idBtn" text="Click Me" press=".onBtnPress"></Button>
 					<content>
                     <List id="idList" items="{
                         path : 'empdata>/Employees',
