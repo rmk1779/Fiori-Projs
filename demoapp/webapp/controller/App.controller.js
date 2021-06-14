@@ -1,5 +1,7 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
+    "demoapp/controller/BaseController",
+    "../util/MyUtil",
     "../model/formatter",
     "sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator"
@@ -7,10 +9,10 @@ sap.ui.define([
 	/**
 	 * @param {typeof sap.ui.core.mvc.Controller} Controller
 	 */
-	function (Controller, formatter, Filter, FilterOperator) {
+	function (Controller, BaseController, MyUtil, formatter, Filter, FilterOperator) {
 		"use strict";
 
-		return Controller.extend("demoapp.controller.App", {
+		return BaseController.extend("demoapp.controller.App", {
             formatter: formatter,
 			onInit: function () {
                   this.oRouter =  this.getOwnerComponent().getRouter();
@@ -68,6 +70,8 @@ sap.ui.define([
         onBtnPress: function(oEvent){
             sap.m.MessageToast.show("clicked man!!!!");
             oEvent.getSource().setText("Ohh Clicked");
+            let sBtnText = oEvent.getSource().getText();
+            MyUtil.myFunc.call(this, sBtnText);
         }
 		});
 	});

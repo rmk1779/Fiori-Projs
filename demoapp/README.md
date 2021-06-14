@@ -31,4 +31,16 @@ A Fiori application.
 
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
+#### UI5 Concepts Covered in this Demo App:
+1. Base Controller and Util.js
+2. Standard Formatters(Data Types) and Custom Formatters
+3. Search, Live Search, Sorting
+4. Aggregation Binding for List
+5. Factory Function
+6. Navigation with parameters
+7. Unit Test - QUnit
+8. Integration Test - OPA5
+9. Uiveri5 Test
+10. Custom Control
+
 

@@ -1,17 +1,18 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
+    "demoapp/controller/BaseController",
     "sap/ui/core/routing/History"
 ],
 	/**
 	 * @param {typeof sap.ui.core.mvc.Controller} Controller
 	 */
-	function (Controller, History) {
+	function (Controller, BaseController, History) {
 		"use strict";
 
-		return Controller.extend("demoapp.controller.App", {
+		return BaseController.extend("demoapp.controller.DetailPage", {
 			onInit: function () {
                 this.oRouter = this.getOwnerComponent().getRouter();
-			this.oRouter.getRoute("DetailPage").attachPatternMatched(this._onObjectMatched, this);
+			    this.oRouter.getRoute("DetailPage").attachPatternMatched(this._onObjectMatched, this);
             },
             _onObjectMatched: function (oEvent) {
             console.log(oEvent.getParameter("arguments").empPath);

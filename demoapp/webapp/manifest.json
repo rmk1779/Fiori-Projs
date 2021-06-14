@@ -96,7 +96,6 @@
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "idApp",
           "viewName": "App"
         },
         "DetailTarget":{

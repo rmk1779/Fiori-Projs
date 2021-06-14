@@ -8,7 +8,6 @@
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
-                    <Button id="idBtn" text="Click Me" press=".onBtnPress"></Button>
 					<content>
                     <List id="idList" items="{
                         path : 'empdata>/Employees',
@@ -45,6 +44,12 @@
                     </dependents>
                     </List>
                     </content>
+                    <footer>
+                    <OverflowToolbar >
+                        <ToolbarSpacer/>
+				        <Button id="idBtn" text="Accept" type="Accept" press=".onBtnPress"/>
+                    </OverflowToolbar>
+                    </footer>
 				</Page>
 			</pages>
 		</App>
